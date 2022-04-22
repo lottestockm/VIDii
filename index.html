@@ -13,57 +13,40 @@
 </head>
 
 <body>
-	<header>
-		<h1>De titel van je tijdlijn</h1>
-		<p>Korte omschrijving van je tijdlijn</p>
-	</header>
 
-	<main>
-		<!-- de tijdlijn zelf is een ordered list -->
 
-		<!-- elk list-item is een punt in tijd -->
-		<!-- 11 list-items om te starten -->
-		<!-- bepaal zelf hoeveel je er nodig hebt -->
-		
-		<!-- in elk listitem staat nu een link -->
-		<!-- de link kun je vullen met jouw content -->
-		<!-- of in zijn geheel vervangen door jouw content -->
-		<ol>
-			<li>
-				<a href="#">eerste punt in tijd</a>
-			</li>
-			<li>
-				<a href="#">tweede punt in tijd</a>
-			</li>
-			<li>
-				<a href="#">derde punt in tijd</a>
-			</li>
-			<li>
-				<a href="#">vierde punt in tijd</a>
-			</li>
-			<li>
-				<a href="#">vijde punt in tijd</a>
-			</li>
-			<li>
-				<a href="#">zesde punt in tijd</a>
-			</li>
-			<li>
-				<a href="#">zevende punt in tijd</a>
-			</li>
-			<li>
-				<a href="#">achste punt in tijd</a>
-			</li>
-			<li>
-				<a href="#">negende punt in tijd</a>
-			</li>
-			<li>
-				<a href="#">tiende punt in tijd</a>
-			</li>
-			<li>
-				<a href="#">elfde punt in tijd</a>
-			</li>
-		</ol>
-	</main>
+		<article class="tvkast">
+			<section class="antenne">
+				<img class="antenneuit" src="images/antenne-01.svg" alt="antenne uit">
+				<img class="antenneaan" src="images/antenne-02.svg" alt="antenne aan">
+			</section>
+			<section class="tv">
+					<section class="scherm">
+
+						<video controls class="mickeyVid" src="videos/mickey1928.mov"></video>
+					</section>	
+					
+			</section>
+			<section class="knoppen">
+				<button class="tvnext"></button>
+			</section>
+		</article>
+		<article class="afstandsbediening">
+
+			<button class="vorige" onclick="prev()">
+				<img src="images/playleft.png" alt="pijltje links">
+			</button>
+
+			<button onclick="uitzetten()" id="pwr" class="power">
+				<img src="images/power-off.png" alt="power button">
+			</button>
+
+			<button class="volgende" onclick="next()">
+
+				<img src="images/playright.png" alt="pijltje rechts">
+			</button>
+		</article>
+	
 
 	<script src="scripts/script.js"></script>
 </body>
