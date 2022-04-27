@@ -9,12 +9,49 @@
 	<title>VIDii 2011/22 - Tijdlijn</title>
 	
 	<link href="styles/style.css" rel="stylesheet">
-	<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+	<link rel="icon" type="image/svg+xml" href="images/mickeyEmoji.svg">
+<!-- Google Font -->
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap" rel="stylesheet">
 </head>
+<header>
+<!-- paaseieren -->
 
+	<div class="firework" id="firework1">
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+		<div class="explosion"></div>
+	</div>
+<!-- H1 en H2 -->
+
+	<h1> MICKEY MOUSE</h1>
+	<h2>1928</h2>
+<!-- paaseieren -->
+	<section class="emoji" id="emojiAnimatie">
+		<img src="images/mickeyEmoji.svg" alt="mickey emoji">
+	</section>
+	<section class="emoji2" id="emojiAnimatie2">
+		<img src="images/mickeyEmoji.svg" alt="mickey emoji">
+	</section>
+	<section class="emoji3" id="emojiAnimatie3">
+		<img src="images/mickeyEmoji.svg" alt="mickey emoji">
+	</section>
+
+
+</header>
 <body>
-
-
+<!-- tv en antenne -->
 		<article class="tvkast">
 			<section class="antenne">
 				<img class="antenneuit" src="images/antenne-01.svg" alt="antenne uit">
@@ -22,31 +59,30 @@
 			</section>
 			<section class="tv">
 					<section class="scherm">
-
-						<video controls class="mickeyVid" src="videos/mickey1928.mov"></video>
+						<video autoplay class="mickeyVid" src="videos/mickey1928.mov"></video>
 					</section>	
-					
 			</section>
 			<section class="knoppen">
 				<button class="tvnext"></button>
 			</section>
+<!-- afstandsbediening -->
 		</article>
 		<article class="afstandsbediening">
-
-			<button class="vorige" onclick="prev()">
-				<img src="images/playleft.png" alt="pijltje links">
+			<button id="pwr" class="power">
+				<img class="powerKnop" src="images/powerIcon.svg" alt="power knop">
 			</button>
 
-			<button onclick="uitzetten()" id="pwr" class="power">
-				<img src="images/power-off.png" alt="power button">
+			<button class="vorige" id="vorige">
+				<img class="imgKnoppen" src="images/pijltjeLinks.svg" alt="knop vorige">
 			</button>
 
-			<button class="volgende" onclick="next()">
-
-				<img src="images/playright.png" alt="pijltje rechts">
+			<button class="volgende" id="volgende">
+				<img class="imgKnoppen" src="images/pijltjeRechts.svg" alt="knop volgende">
 			</button>
+			<button class="knop1" id="knop1" >1</button>
+			<button class="knop2" id="knop2" >2</button>
+			<button class="knop3" id="knop3" >3</button>
 		</article>
-	
 
 	<script src="scripts/script.js"></script>
 </body>

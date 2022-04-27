@@ -3,39 +3,278 @@
   box-sizing:border-box;  
 }
 
+:root{
+--tvkleur: #664B3B;
+}
+
 
 html, body {
   height:100%;
   margin:0;
 
 }
+/* _________________________________________________________________________________________________________________
+HEADER
+_________________________________________________________________________________________________________________ */
+
+header{
+  padding: 0;
+  top: 0;
+  position: absolute;
+  
+}
+h1 {
+
+  font-family: 'Mouse Memoirs', sans-serif;
+  text-align: left;
+  position: relative;
+}
+h2 {
+  font-family: 'Mouse Memoirs', sans-serif;
+  opacity: 0;
+  text-align: center;
+  position: relative;
+}
+
+
+
+
+/* _________________________________________________________________________________________________________________
+EMOJI KNOP 1
+_________________________________________________________________________________________________________________ */
+
+.emoji{
+  position: fixed;
+  top: -6em;
+  left: 20%;
+  height: 6em;
+  margin-left: 0;
+  /* animation-name: emoji;
+  animation-duration: 3s; */
+}
+
+.emoji.beweeg {
+  animation:party 3s 2 ease-out;
+}
+
+.emoji img {
+  height: 100%;
+  width: auto;
+  display:block;
+}
+
+@keyframes party {
+0% {
+transform: none;
+}
+
+40%{
+transform: translateY(100vh) scale(.9,1.1);
+}
+
+50% {
+transform: translateY(100vh) scale(1.05,.95);
+}
+
+55%{
+  transform: translateY(100vh) scale(1.07,.90);
+}
+60%{
+  transform: translateY(100vh) scale(1);
+}
+100% {
+transform: none;
+}
+}
+
+.emoji2{
+  position: fixed;
+  top: -6em;
+  right: 20%;
+  height: 6em;
+  margin-left: 0;
+
+}
+
+.emoji2.beweeg {
+  animation:party 3s 2 ease-out;
+}
+
+.emoji2 img {
+  height: 100%;
+  width: auto;
+  display:block;
+}
+
+/* _________________________________________________________________________________________________________________
+EMOJI KNOP 2
+_________________________________________________________________________________________________________________ */
+
+.emoji3 {
+  position: fixed;
+  bottom: 0;
+  left: -10%;
+  height: 6em;
+  margin-left: 0;
+}
+.emoji3 img {
+  height: 100%;
+  width: auto;
+  display:block;
+}
+.emoji3.rollen{
+  animation-name: rollen;
+  animation-duration: 6s;
+}
+
+@keyframes rollen {
+  0%{
+    transform: none;
+  }
+  50%{
+    transform:  translateX(230vh) rotate(720deg);
+  }
+  100%{
+    transform: none;
+  }
+}
+
+
+
+/* _________________________________________________________________________________________________________________
+VUURWERK KNOP 3
+bron: https://codepen.io/MinzCode/pen/abmwmOG
+_________________________________________________________________________________________________________________ */
+div {
+  background: none;
+}
+.firework {
+	position: absolute;
+  background: none;
+  opacity: 0;
+}
+.explosion {
+	position: fixed;
+	left: -2px;
+	bottom: -17em;
+	width: 8px;
+	height: 45em;
+	transform-origin: 10% 100%;
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(252,236,231,1) 15%, rgba(250,226,218,1) 36%, rgba(245,188,169,1) 78%, rgba(245,188,169,1) 100%);
+	overflow: hidden;
+}
+
+.explosion:nth-child(1) {
+	transform: rotate(0deg) translateY(-15px);
+}
+.explosion:nth-child(2) {
+	transform: rotate(30deg) translateY(-15px);
+}
+.explosion:nth-child(3) {
+	transform: rotate(60deg) translateY(-15px);
+}
+.explosion:nth-child(4) {
+	transform: rotate(90deg) translateY(-15px);
+}
+.explosion:nth-child(5) {
+	transform: rotate(120deg) translateY(-15px);
+}
+.explosion:nth-child(6) {
+	transform: rotate(150deg) translateY(-15px);
+}
+.explosion:nth-child(7) {
+	transform: rotate(180deg) translateY(-15px);
+}
+.explosion:nth-child(8) {
+	transform: rotate(210deg) translateY(-15px);
+}
+.explosion:nth-child(9) {
+	transform: rotate(240deg) translateY(-15px);
+}
+.explosion:nth-child(10) {
+	transform: rotate(270deg) translateY(-15px);
+}
+.explosion:nth-child(11) {
+	transform: rotate(300deg) translateY(-15px);
+}
+.explosion:nth-child(12) {
+	transform: rotate(330deg) translateY(-15px);
+}
+
+.explosion::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 100%;
+	height: 40px;
+  background: rgb(255,197,137);
+  background: linear-gradient(0deg, rgba(255,197,137,1) 0%, rgba(255,64,0,1) 100%);
+}
+@keyframes explosion {
+	0% {
+		top: 100%;
+	}
+	33%, 100% {
+		top: -50%;
+	}
+}
+
+#firework1 {
+	left: 50%;
+	top: 50%;
+	transform: scale(1);
+}
+#firework1 .explosion::before {
+	animation: explosion 2.5s linear infinite;
+}
+
+
+
+
+
+/* _________________________________________________________________________________________________________________
+BODY
+_________________________________________________________________________________________________________________ */
+
+
 body{
   display: grid;
   place-items: center;
-  background-color: #FCBF62;
+  overflow: hidden;
+  margin-top: 2em;
+  background: rgb(255,255,255);
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(245,188,169,1) 73%, rgba(245,188,169,1) 100%);
+
+
+
 }
 button:not([disabled]) {
   cursor:pointer;
 }
 
-/* jouw CSS vanaf hier */
+
+
+
+/* _________________________________________________________________________________________________________________
+TV
+_________________________________________________________________________________________________________________ */
 
 
 
 article.tvkast {
-  background-color: #664B3B;
+  background-color: var(--tvkleur);
   margin: auto;
   padding: 1.5em;
   display: flex;
   gap: 2em;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.5),
-  inset 7px 5px 8px rgb(255 255 255 / 0.3),
-  inset -8px -4px 9px 5px rgba(0,0,0,0.31);
+  box-shadow: 
+    0 3px 10px rgb(0 0 0 / 0.5),
+    inset 7px 5px 8px rgb(255 255 255 / 0.3),
+    inset -8px -4px 9px 5px rgba(0,0,0,0.31);
   position: relative;
 
-  ;
-
-  /* overflow:hidden; */
 }
 
 .tv {
@@ -45,12 +284,12 @@ article.tvkast {
   display: grid;
   place-items: center;
   padding: 1em;
-
   border: 3px white;
   border-style: solid;
   border-radius: 10px;
-  box-shadow:inset 10px 7px 20px rgb(255 255 255),
-  inset -8px -4px 9px 5px rgba(0,0,0,0.31);
+  box-shadow:
+    inset 10px 7px 20px rgb(255 255 255),
+    inset -8px -4px 9px 5px rgba(0,0,0,0.31);
   
   
 }
@@ -60,17 +299,13 @@ article.tvkast {
   height: 100%;
   display: grid;
   place-items: center;
-  
 }
 
 .knoppen {
   background-color: black;
   width: 7em;
   height: 18em;
-  /* display: grid;
-  place-items: center; */
   padding: 1.4em;
-  
 }
 
 .tvnext {
@@ -80,61 +315,98 @@ article.tvkast {
   border-radius: 3em;
   border: solid #664B3B;
   
-  /* box-shadow: 0 1em 1px rgba(255, 255, 255,); */
-  /* filter: drop-shadow(0 0 3px #FFFFFF99); */
-  box-shadow: 2px 3px 6px rgb(255 255 255 / 0.3),
-  inset 2px 3px 2px rgb(255 255 255 / 0.2);
+
+  box-shadow: 
+    2px 3px 6px rgb(255 255 255 / 0.3),
+    inset 2px 3px 2px rgb(255 255 255 / 0.2);
 }
+
+/* _________________________________________________________________________________________________________________
+VIDEO in de TV
+_________________________________________________________________________________________________________________ */
+.mickeyVid {
+  width: 21em;
+  height: 15em;
+  opacity: 0;
+}
+
+
+
+/* _________________________________________________________________________________________________________________
+AFSTANDSBEDIENING
+_________________________________________________________________________________________________________________ */
+
+
 
 article.afstandsbediening {
   display: flex;
   gap: 0.5em;
   position: fixed;
-  bottom: 0;
+  bottom: -1em;
   background-color: darkgrey;
-  padding: 1em;
+  padding: 2em;
   width: 15em;
   height: 10em;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.5),
-  inset 7px 5px 8px rgb(255 255 255 / 0.3);
+  box-shadow: 
+    0 3px 10px rgb(0 0 0 / 0.5),
+    inset 7px 5px 8px rgb(255 255 255 / 0.3),
+    inset 0 0 0 1em #333333;
+  flex-wrap: wrap;
+
 
 }
 button{
-  width: 100%;
-  height: 50%;
-  background-color: white;
+  width: 30%;
+  height: 3em;
+  background-color: #333333;
   border: none;
-}
+  box-shadow: 
+    inset -10px -10px 6px -1px rgba(0,0,0,0.17),
+    inset 7px 7px 6px -1px rgba(255, 255, 255, 0.265),
+    3px 3px 2px -1px rgba(0, 0, 0, 0.263);
+  ;
+  color: white;
 
+
+}
+button:active{
+  box-shadow:
+  inset -8px -8px 6px -1px rgba(255, 255, 255, 0.081),
+  inset 7px 7px 6px -1px rgba(0, 0, 0, 0.393);
+}
 .power {
   display: grid;
+  background-color: #FF453A;
   place-items: center;
-  border-radius: 3em;
-  border: solid white;
-  /* border-color: white; */
-  
-}
-img{
-  width: 3em;
-  height: 3em;
+  color: white; 
 }
 
-/* volgende en vorige knoppen */
+.powerKnop{
+  width: 1em;
+}
+
 .vorige {
-  /* margin-top: 3em; */
-  background-color: darkgrey;
-  /* width: 0;
-  height: 0;
-  border-top: 50px solid transparent;
-  border-right: 100px solid red;
-  border-bottom: 50px solid transparent; */
+  background-color: #333333;
 }
 
 .volgende {
-  /* margin-top: 3em; */
-  background-color: darkgrey;
-
+  background-color: #333333;
 }
+.imgKnoppen {
+  width: 0.5em;
+}
+
+
+div {
+  background-color: black;
+  width: 30%;
+  height: 2em;
+}
+
+/* _________________________________________________________________________________________________________________
+ANTENNE
+_________________________________________________________________________________________________________________ */
+
 .antenne {
   position: absolute;
   width: 20em;
@@ -200,20 +472,16 @@ img{
   }
 
 }
-.mickeyVid {
-  width: 21em;
-  height: 15em;
-  opacity: 0;
-}
 
-.power:hover {
-  background-color: lightgrey;
-}
+/* _________________________________________________________________________________________________________________
+HOVER STATES BUTTON
+_________________________________________________________________________________________________________________ */
 
-.vorige:hover {
+.afstandsbediening button:hover {
   transform: scale(1.1);
 }
 
-.volgende:hover {
-  transform: scale(1.1);
+button:focus{
+  outline: none;
+  transform: scale(1.15);
 }
